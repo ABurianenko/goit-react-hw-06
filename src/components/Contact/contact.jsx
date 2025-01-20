@@ -1,6 +1,10 @@
+import { useDispatch } from 'react-redux';
 import { contactCard, contactInfo, contactName, contactNumber, deleteBtn, person, telephone } from './contact.module.css'
+import { deleteContact } from '../../redux/contactsSlice';
 
-const Contact = ({ data: { id, name, number }, onDelete }) => {
+const Contact = ({ contact }) => {
+    const dispatch = useDispatch();
+
     return (
         <div className={contactCard}>
             <div className={contactInfo}>
@@ -8,17 +12,17 @@ const Contact = ({ data: { id, name, number }, onDelete }) => {
                 <svg className={person}>
                     <use href='/src/assets/symbol-defs.svg#icon-user'></use>
                 </svg>
-                <p>{name}</p>
+                <p>{contact.name}</p>
                 </div>
                 <div className={contactNumber}>
                     <svg className={telephone}>
                         <use href='/src/assets/symbol-defs.svg#icon-phone'></use>
                     </svg>
-                    <p>{number}</p>
+                    <p>{contact.number}</p>
                 </div>
             </div>
             
-            <button className={deleteBtn} onClick={() => onDelete(id)}>
+            <button className={deleteBtn} onClick={() => {dispatch(deleteContact(contact.id))}}>
                 Delete
             </button>
         </div>

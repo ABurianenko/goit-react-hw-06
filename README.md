@@ -1,8 +1,14 @@
-# React + Vite
+Проєктування стану
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+У нашому додатку є дві основні частини: список контактів, з яких можна отримати всі необхідні дані про ПІБ та номер, та значення фільтрів списку контактів.
+Кожне завдання буде представлено об'єктом з наступними властивостями:
 
-Currently, two official plugins are available:
+> id - унікальний ідентифікатор
+> name - ПІБ контакту, які ввів користувач під час створення
+> number - номер телефону
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Проєктування екшенів
+
+> Додати новий контакт з даними, введеними користувачем
+> Знайти контакт по введеному в пошук значенню
+> Видалити контакт
